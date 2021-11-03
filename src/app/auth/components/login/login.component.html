@@ -1,0 +1,44 @@
+<div class="all">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center">
+        <form fxLayout="column" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="login()">
+            <h2>Login</h2>
+            <div fxLayout="column">
+                <mat-form-field class="no-wrapper" appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput type="text" formControlName="email">
+                    <span matSuffix>
+                        <mat-icon>email</mat-icon>
+                    </span>
+                </mat-form-field>
+                <span class="validation" *ngIf="campoNoValido('email')">
+                    {{emailErrorMsg}}
+                </span>
+            </div>
+            <div fxLayout="column">
+                <mat-form-field class="no-wrapper" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <span matSuffix>
+                        <mat-icon>vpn_key</mat-icon>
+                    </span>
+                </mat-form-field>
+                <span class="validation" *ngIf="campoNoValido('password')">
+                    La contraseña debe tener mínimo 6 dígitos
+                </span>
+            </div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!miFormulario.valid">
+                <span>INGRESAR&nbsp;</span>
+                <mat-icon>done</mat-icon>
+            </button>
+            <br>
+            <div fxLayout="column" style="text-align: center;">
+                <span>
+                    ¿No tienes cuenta?
+                </span>
+                <a class="create" routerLink="../register">
+                    Crear una aquí
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

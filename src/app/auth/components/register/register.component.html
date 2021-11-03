@@ -1,0 +1,98 @@
+<div class="all">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center">
+        <form fxLayout="column" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="register()">
+            <h2>Registro</h2>
+            <div fxLayout="row" fxLayout.xs="column">
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" formControlName="name">
+                        <span matSuffix>
+                            <mat-icon>person</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('name')">
+                        El nombre es obligatorio
+                    </span>
+                </div>
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text" formControlName="surname">
+                        <span matSuffix>
+                            <mat-icon>people_alt</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('surname')">
+                        Apellido Paterno y Materno
+                    </span>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column">
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Nick</mat-label>
+                        <input matInput type="text" formControlName="nick">
+                        <span matSuffix>
+                            <mat-icon>face</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('nick')">
+                        {{nickErrorMsg}}
+                    </span>
+                </div>
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Correo</mat-label>
+                        <input matInput type="text" formControlName="email">
+                        <span matSuffix>
+                            <mat-icon>email</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('email')">
+                        {{emailErrorMsg}}
+                    </span>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column">
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" formControlName="password">
+                        <span matSuffix>
+                            <mat-icon>vpn_key</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('password')">
+                        Contraseña mayor a 6 caracteres
+                    </span>
+                </div>
+                <div fxLayout="column">
+                    <mat-form-field class="no-wrapper" appearance="outline">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput type="password" formControlName="password2">
+                        <span matSuffix>
+                            <mat-icon>vpn_key</mat-icon>
+                        </span>
+                    </mat-form-field>
+                    <span class="validation" *ngIf="campoNoValido('password2')">
+                        Las contraseñas no son iguales
+                    </span>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!miFormulario.valid">
+                <span>REGISTRAR&nbsp;</span>
+                <mat-icon>person_add_alt</mat-icon>
+            </button>
+            <br>
+            <div fxLayout="column" style="text-align: center;">
+                <span>
+                    ¿Ya tienes cuenta?
+                </span>
+                <a class="create" routerLink="../login">
+                    Ingresa aquí
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

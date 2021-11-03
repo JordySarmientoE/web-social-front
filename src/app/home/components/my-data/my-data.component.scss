@@ -1,0 +1,53 @@
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+h2{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.create{
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 2px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+mat-form-field{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+:host ::ng-deep .no-wrapper .mat-form-field-wrapper{
+    margin: 7px !important;
+    padding: 0;
+}
+
+.validation{
+    margin-left: 10px;
+    color: #df4168;
+    font-weight: bold;
+}
+
+span{
+    font-family: 'Lato', sans-serif;
+}
+
+button{
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-family: 'Lato', sans-serif;
+}
+
+mat-label{
+    color: white;
+    font-family: 'Lato', sans-serif;
+}

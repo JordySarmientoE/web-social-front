@@ -1,0 +1,100 @@
+<div class="content">
+    <h2>Actualizar Datos</h2>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="container" fxLayout="column" fxLayoutAlign="center center">
+        <form fxLayout="row" fxLayout.xs="column" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="actualizar()">
+            <div fxLayout="column">
+                <div fxLayout="row" fxLayout.xs="column">
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput type="text" formControlName="name">
+                            <span matSuffix>
+                                <mat-icon>person</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('name')">
+                            El nombre es obligatorio
+                        </span>
+                    </div>
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput type="text" formControlName="surname">
+                            <span matSuffix>
+                                <mat-icon>people_alt</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('surname')">
+                            Apellido Paterno y Materno
+                        </span>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Nick</mat-label>
+                            <input matInput type="text" formControlName="nick">
+                            <span matSuffix>
+                                <mat-icon>face</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('nick')">
+                            {{nickErrorMsg}}
+                        </span>
+                    </div>
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Correo</mat-label>
+                            <input matInput type="text" formControlName="email">
+                            <span matSuffix>
+                                <mat-icon>email</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('email')">
+                            {{emailErrorMsg}}
+                        </span>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="password" formControlName="password">
+                            <span matSuffix>
+                                <mat-icon>vpn_key</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('password')">
+                            Contraseña mayor a 6 caracteres
+                        </span>
+                    </div>
+                    <div fxLayout="column">
+                        <mat-form-field class="no-wrapper" appearance="outline">
+                            <mat-label>Confirmar Contraseña</mat-label>
+                            <input matInput type="password" formControlName="password2">
+                            <span matSuffix>
+                                <mat-icon>vpn_key</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <span class="validation" *ngIf="campoNoValido('password2')">
+                            Las contraseñas no son iguales
+                        </span>
+                    </div>
+                </div>
+                <button type="button" mat-raised-button (click)="fileInput.click()" color="warn" style="color: white">Elegir Imagen</button>
+                <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" accept="image/*">
+                <br>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!miFormulario.valid" style="margin-bottom: 15px;">
+                    <span>ACTUALIZAR&nbsp;</span>
+                    <mat-icon>person_add_alt</mat-icon>
+                </button>
+            </div>
+            <div style="width: 15px;"></div>
+            <div fxFlex fxLayoutAlign="center center" style="margin-bottom: 10px;">
+                <img [src]="data | imagenUsuario" style="width: 200px; height: 200px;">
+            </div>
+        </form>
+    </div>
+</div>
