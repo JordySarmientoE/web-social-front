@@ -1,1 +1,34 @@
-<p>perfil works!</p>
+<div class="container">
+  <mat-card class="example-card" fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row" class="banner">
+        <div class="izq" fxLayoutAlign="center center">
+            <img [src]="userLogged | imagenUsuario" />
+          </div>
+          <div class="der" fxLayout="column" class="buttons" fxLayoutGap="5px" fxLayoutAlign="end end">
+            <button mat-stroked-button [routerLink]="['/home/my-data']">Editar Perfil</button>
+          </div>
+    </div>
+    <mat-card-header fxLayout="column">
+        <mat-card-title
+          >{{ userLogged.name | titlecase }}
+          {{ userLogged.surname | titlecase }}</mat-card-title
+        >
+        <mat-card-subtitle>{{ userLogged.nick }}</mat-card-subtitle>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="33.4" fxLayoutAlign="center center" fxLayout="column" class="border">
+                <p style="margin-top: 5px;">Siguiendo</p>
+                <p>{{counters?.following}}</p>
+            </div>
+            <div fxFlex="33.4" fxLayoutAlign="center center" fxLayout="column" class="border">
+                <p style="margin-top: 5px;">Seguidores</p>
+                <p>{{counters?.followed}}</p>
+            </div>
+            <div fxFlex="33.4" fxLayoutAlign="center center" fxLayout="column" class="border">
+                <p style="margin-top: 5px;">Publicaciones</p>
+                <p>{{counters?.publication}}</p>
+            </div>
+        </div>
+      </mat-card-header>
+  </mat-card>
+</div>
+<br />
