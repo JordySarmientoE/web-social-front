@@ -25,6 +25,10 @@ const routes: Routes = [
         component: UsersComponent
       },
       {
+        path: 'users/:page',
+        component: UsersComponent
+      },
+      {
         path: 'perfil',
         component: PerfilComponent
       },

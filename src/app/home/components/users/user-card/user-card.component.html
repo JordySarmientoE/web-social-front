@@ -1,0 +1,37 @@
+<div class="container">
+  <mat-card class="example-card" fxLayout="row" fxLayoutGap="2px">
+    <div class="izq" fxLayoutAlign="center center">
+      <img [src]="user | imagenUsuario" />
+    </div>
+    <div
+      class="der"
+      fxLayout="column"
+      style="width: 100%;"
+      fxLayoutGap="5px"
+    >
+      <mat-card-header fxLayout="column">
+        <mat-card-title
+          >{{ user.name | titlecase }}
+          {{ user.surname | titlecase }}</mat-card-title
+        >
+        <mat-card-subtitle>{{ user.nick }}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- Seguimiento -->
+      <div fxLayoutAlign="end center" *ngIf="user._id !== userLogged._id">
+        <button mat-raised-button color="primary" *ngIf="follows.indexOf(user._id) < 0"
+          (click)="followUser(user._id)">Seguir</button>
+        <button mat-raised-button color="warn" *ngIf="follows.indexOf(user._id) >= 0"
+            (mouseenter)="mouseOver(user._id)"
+            (mouseleave)="mouseLeave(user._id)"
+            [class.notFollowing]="user._id == followUserOver"
+            (click)="unFollowUser(user._id)">
+            <span *ngIf="user._id == followUserOver; else following">Dejar de seguir</span>
+            <ng-template #following>
+                <span>Siguiendo</span>
+            </ng-template>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<br />

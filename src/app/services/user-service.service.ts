@@ -11,7 +11,7 @@ import { User } from '../interfaces/user';
 export class UserServiceService {
 
   apiUrl = environment.apiUrl;
-  private _usuario!: User;
+  _usuario!: User;
 
   get usuario() {
     return { ...this._usuario };
@@ -99,10 +99,23 @@ export class UserServiceService {
     const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '' );
 
-    console.log(headers)
     
     return this.http.post<User>(url,uploadData,{headers})
 
+  }
+
+  getUsers(page: number){
+    const headers = new HttpHeaders()
+      .set('x-token', localStorage.getItem('token') || '' );
+    
+    return this.http.get(`${this.apiUrl}/users/${page}`,{headers})
+  }
+
+  getUser(id: string){
+    const headers = new HttpHeaders()
+      .set('x-token', localStorage.getItem('token') || '' );
+    
+    return this.http.get(`${this.apiUrl}/users/${id}`,{headers})
   }
 
 }

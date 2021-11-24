@@ -13,6 +13,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { MyDataComponent } from './components/my-data/my-data.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImagenUsuarioPipe } from '../pipes/imagen-usuario.pipe';
+import { UserCardComponent } from './components/users/user-card/user-card.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ImagenUsuarioPipe } from '../pipes/imagen-usuario.pipe';
     UsersComponent,
     PerfilComponent,
     MyDataComponent,
-    ImagenUsuarioPipe
+    ImagenUsuarioPipe,
+    UserCardComponent
   ],
   imports: [
     CommonModule,

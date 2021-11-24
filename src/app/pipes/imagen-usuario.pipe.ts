@@ -3,7 +3,7 @@ import { User } from '../interfaces/user';
 
 @Pipe({
   name: 'imagenUsuario',
-  pure: true
+  pure: false
 })
 export class ImagenUsuarioPipe implements PipeTransform {
 

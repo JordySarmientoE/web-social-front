@@ -8,10 +8,13 @@ import { UserServiceService } from '../../../services/user-service.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  
+  usuario: any;
 
   constructor(private userService: UserServiceService, private router: Router) { }
 
   ngOnInit(): void {
+    this.usuario = this.userService.usuario;
   }
 
   logout(){

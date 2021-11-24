@@ -84,7 +84,11 @@ export class MyDataComponent implements OnInit {
       body = { email, surname, name, nick };
     }
     this.userService.updateData(body).subscribe(data => {
-      
+      this.userService._usuario.name = data.name;
+      this.userService._usuario.nick = data.nick; 
+      this.userService._usuario.surname = data.surname
+      this.userService._usuario.email = data.email
+      this.userService._usuario.password = data.password
     }, err => {
       console.log(err)
     })
@@ -92,9 +96,8 @@ export class MyDataComponent implements OnInit {
     if (this.selectedFile) {
       const uploadData = new FormData();
       uploadData.append('image', this.selectedFile, this.selectedFile.name);
-      console.log(uploadData)
       this.userService.makeFileRequest(uploadData).subscribe(data => {
-        
+        this.userService._usuario.image = data.image;
       })
     }
 
