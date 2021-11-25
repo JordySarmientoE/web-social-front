@@ -12,10 +12,6 @@
                 <mat-icon mat-list-icon>home</mat-icon>
                 <span>Inicio</span>
             </a>
-            <a routerLink="./timeline" mat-list-item (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>timeline</mat-icon>
-                <span>TimeLine</span>
-            </a>
             <a routerLink="./users" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>group</mat-icon>
                 <span>Usuarios</span>
@@ -23,7 +19,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-toolbar>
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow.xs fxHide style="margin-right: 5px;">
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow.xs style="margin-right: 5px;">
             <mat-icon>menu</mat-icon>
         </button>
         <h1>YouView</h1>
@@ -31,10 +27,6 @@
             <a routerLink="./" mat-list-item>
                 <mat-icon mat-list-icon>home</mat-icon>
                 <span>Inicio</span>
-            </a>
-            <a routerLink="./timeline" mat-list-item>
-                <mat-icon mat-list-icon>timeline</mat-icon>
-                <span>TimeLine</span>
             </a>
             <a routerLink="./users" mat-list-item>
                 <mat-icon mat-list-icon>group</mat-icon>

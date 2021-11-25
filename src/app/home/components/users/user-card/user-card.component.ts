@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../../../interfaces/user';
 import { FollowService } from '../../../../services/follow.service';
-import { UserServiceService } from '../../../../services/user-service.service';
+import { UserService } from '../../../../services/user.service';
 import { Follow } from '../../../../interfaces/follow';
 
 @Component({
@@ -17,7 +17,7 @@ export class UserCardComponent implements OnInit {
 
   followUserOver!:string | number;
 
-  constructor(private followService: FollowService, private userService: UserServiceService) { }
+  constructor(private followService: FollowService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.userLogged = this.userService.usuario;

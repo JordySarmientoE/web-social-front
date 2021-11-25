@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidatorService } from '../../../shared/validator/validator.service';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 import { User } from '../../../interfaces/user';
 import { NickupdateServiceService } from '../../../shared/update/nickupdate-service.service';
 import { EmailupdateServiceService } from '../../../shared/update/emailupdate-service.service';
@@ -33,7 +33,7 @@ export class MyDataComponent implements OnInit {
   data!: User;
 
   constructor(private fb: FormBuilder, private vS: ValidatorService, private nv: NickupdateServiceService,
-    private ev: EmailupdateServiceService, private userService: UserServiceService, private router: Router) { }
+    private ev: EmailupdateServiceService, private userService: UserService, private router: Router) { }
 
 
   ngOnInit(): void {

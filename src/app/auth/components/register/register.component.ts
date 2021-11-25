@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidatorService } from '../../../shared/validator/validator.service';
 import { EmailValidatorService } from '../../../shared/validator/email-validator.service';
 import { NickValidatorService } from '../../../shared/validator/nick-validator.service';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder, private vS: ValidatorService, private ev: EmailValidatorService,
-    private nv: NickValidatorService, private userService: UserServiceService,
+    private nv: NickValidatorService, private userService: UserService,
     private router: Router) { }
 
   ngOnInit(): void {

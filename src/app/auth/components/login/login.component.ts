@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 import Swal from 'sweetalert2';
 import { ValidatorService } from '../../../shared/validator/validator.service';
 import { Router } from '@angular/router';
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: ['', [ Validators.required, Validators.minLength(6) ]],
   });
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService,
+  constructor(private fb: FormBuilder, private userService: UserService,
     private vS: ValidatorService, private router: Router) { }
 
   ngOnInit(): void {

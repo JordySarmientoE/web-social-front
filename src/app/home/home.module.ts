@@ -7,7 +7,6 @@ import { HomePageComponent } from './shared/home-page/home-page.component';
 import { MaterialModule } from '../material/material.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { TimelineComponent } from './components/timeline/timeline.component';
 import { UsersComponent } from './components/users/users.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { MyDataComponent } from './components/my-data/my-data.component';
@@ -20,7 +19,6 @@ import { UserCardComponent } from './components/users/user-card/user-card.compon
   declarations: [
     HomeComponent,
     HomePageComponent,
-    TimelineComponent,
     UsersComponent,
     PerfilComponent,
     MyDataComponent,

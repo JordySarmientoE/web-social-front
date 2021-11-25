@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 import { User } from '../../../interfaces/user';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
   users!: User[];
   follows!: string[]
 
-  constructor(private userService: UserServiceService, private _route: ActivatedRoute, private route: Router) { }
+  constructor(private userService: UserService, private _route: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     this.user = this.userService._usuario;

@@ -4,8 +4,8 @@
     </div>
     <mat-divider></mat-divider>
     <br>
-    <div class="people" fxLayout="row wrap">
-        <div *ngFor="let user of users" fxFlex="50" fxFlex.lt-md="100">
+    <div class="people" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center">
+        <div *ngFor="let user of users" fxFlex="40" fxFlex.lt-md="100">
             <div>
                 <app-user-card [user]="user" [follows]="follows"></app-user-card>
             </div>

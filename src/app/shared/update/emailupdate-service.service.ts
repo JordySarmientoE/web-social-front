@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.prod';
 import { delay, map } from 'rxjs/operators';
 import { User } from '../../interfaces/user';
-import { UserServiceService } from '../../services/user-service.service';
+import { UserService } from '../../services/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class EmailupdateServiceService {
 
   apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private userService: UserServiceService) { }
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
 

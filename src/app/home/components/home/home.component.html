@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="container" fxLayout="column">
+    <div>
+        <h2>Inicio</h2>
+    </div>
+    <mat-divider></mat-divider><br>
+    <div fxLayoutAlign="center center">
+        <mat-card fxFlex="50" fxFlex.xs="100" fxFlex.lt-md="100" fxLayoutGap="15px"
+            fxLayout="row">
+            <div class="izq">
+                <img [src]="user | imagenUsuario">
+            </div>
+            <div class="der" style="width: 100%;" fxLayout="column">
+                <form fxLayout="column" [formGroup]="miFormulario">
+                    <textarea matInput
+                                  cdkTextareaAutosize
+                                  #autosize="cdkTextareaAutosize"
+                                  cdkAutosizeMinRows="1"
+                                  cdkAutosizeMaxRows="20"
+                                  placeholder="¿Qué está pasando?"
+                                  formControlName="text"></textarea>
+                    <hr style="width: 100%;">
+                    <div class="buttons">
+                        <mat-icon (click)="fileInput.click()">image</mat-icon>
+                        <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" accept="image/*">
+                        <button mat-raised-button color="primary" [disabled]="miFormulario.invalid"
+                            (click)="publicate()">Publicar</button>
+                    </div>
+                </form>
+                <br>
+                <img *ngIf="selectedFile && fileStatus" [src]="url">
+            </div>
+        </mat-card>
+    </div>
+    <br>
+    <div fxLayoutAlign="center center">
+        <mat-card fxFlex="50" fxFlex.xs="100" fxFlex.lt-md="100" fxLayoutGap="15px"
+            fxLayout="row">
+            
+        </mat-card>
+    </div>
+</div>

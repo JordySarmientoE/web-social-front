@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 import { User } from '../../../interfaces/user';
 
 @Component({
@@ -12,7 +12,7 @@ export class PerfilComponent implements OnInit {
   counters!: any;
   userLogged!: User;
 
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getCounters();

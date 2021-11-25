@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserServiceService } from '../../../services/user-service.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +11,7 @@ export class HomePageComponent implements OnInit {
   
   usuario: any;
 
-  constructor(private userService: UserServiceService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.usuario = this.userService.usuario;
